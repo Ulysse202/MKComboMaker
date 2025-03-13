@@ -8,21 +8,18 @@ import java.awt.*;
 public class myButton extends JButton {
 
     private Part part;
-    private JLabel label;
     private ImageIcon ii;
 
     public myButton(Part p){
         part = p;
         ii =  p.getIcon();
-        label = new JLabel();
-        label.setIcon(ii);
-        this.add(label);
+        repaint();
     }
 
     public void resetIcon(Part p){
         part = p;
         ii=part.getIcon();
-        label.setIcon(ii);
+
     }
 
     public ImageIcon fetchIcon() {return ii;}
@@ -31,9 +28,9 @@ public class myButton extends JButton {
 
     @Override
     public void paintComponent(Graphics g){
+        Image scaledImage = ii.getImage().getScaledInstance(getWidth(),getHeight(),Image.SCALE_SMOOTH);
+        setIcon(new ImageIcon(scaledImage));
         super.paintComponent(g);
 
-        Image scaledImage = ii.getImage().getScaledInstance(getWidth(),getHeight(),Image.SCALE_SMOOTH);
-        g.drawImage(scaledImage,0,0,this);
     }
 }
