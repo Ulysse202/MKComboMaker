@@ -12,6 +12,8 @@ public class selectionPanel extends JPanel implements ActionListener {
     myButton[] buttons;
     myButton caller;
     StatsPanel statsPanel;
+    static final Dimension MIN_SIZE = new Dimension(20,20);
+    static final Dimension MAX_SIZE = new Dimension(30,30);
 
     public selectionPanel(Part[] icons,myButton caller,StatsPanel statsDisplay){
         this.statsPanel = statsDisplay;
@@ -30,6 +32,11 @@ public class selectionPanel extends JPanel implements ActionListener {
         int i = 0;
         for(Part p : icons){
             this.buttons[i] = new myButton(p);
+            this.buttons[i].setMinimumSize(MIN_SIZE);
+            this.buttons[i].setMaximumSize(MAX_SIZE);
+            this.buttons[i].setBorderPainted(false);
+            this.buttons[i].setContentAreaFilled(false);
+            this.buttons[i].setFocusPainted(false);
             this.buttons[i].addActionListener(this);
             i++;
 
