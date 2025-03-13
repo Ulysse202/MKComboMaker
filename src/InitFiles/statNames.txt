@@ -1,0 +1,14 @@
+Weight
+Acceleration
+On-Road-Traction
+Off-Road-Traction
+Mini-Turbo
+Ground-Speed
+Water-Speed
+AntiGrav-Speed
+Air-Speed
+Ground-Handling
+Water-Handling
+AntiGrav-Handling
+Air-Handling
+Invincibility
