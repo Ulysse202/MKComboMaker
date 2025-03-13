@@ -29,7 +29,7 @@ public class MyPanel extends JPanel {
         }
         this.setPreferredSize(new Dimension(background.getWidth(), background.getHeight()));
         this.setLayout(null);
-
+        
         //extentiating all of the JButtons
         characters = new myButton(c[4]);
         vehicles = new myButton(v[16]);
@@ -59,24 +59,36 @@ public class MyPanel extends JPanel {
         characters.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                vehicleSelection.setVisible(false);
+                tireSelection.setVisible(false);
+                gliderSelection.setVisible(false);
                 characterSelection.setVisible(true);
             }
         });
         vehicles.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                tireSelection.setVisible(false);
+                gliderSelection.setVisible(false);
+                characterSelection.setVisible(false);
                 vehicleSelection.setVisible(true);
             }
         });
         tires.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                vehicleSelection.setVisible(false);
+                gliderSelection.setVisible(false);
+                characterSelection.setVisible(false);
                 tireSelection.setVisible(true);
             }
         });
         gliders.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                vehicleSelection.setVisible(false);
+                tireSelection.setVisible(false);
+                characterSelection.setVisible(false);
                 gliderSelection.setVisible(true);
             }
         });
@@ -92,7 +104,7 @@ public class MyPanel extends JPanel {
     }
 
 
-    //Used to paint the packground for now
+    //Used to paint the background for now
     @Override
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
